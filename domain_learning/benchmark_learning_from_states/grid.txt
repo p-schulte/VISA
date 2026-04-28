@@ -1,0 +1,1 @@
+-si -d pddl_files/grid/grid.pddl -i pddl_files/grid/grid-huge.pddl -v pddl_files/grid/grid-huge-2.pddl -s 10000 -vs 20000 -n grid

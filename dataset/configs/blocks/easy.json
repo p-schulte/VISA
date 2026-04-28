@@ -1,0 +1,41 @@
+{
+    "domain_name": "blocks",
+    "name_extension": "gen_test_2_1000",
+    "num_sequences": 1000,
+    "sequence_length_method": "planner",
+    "num_img_per_sequence": [10, 10],
+    "max_img_per_sequence": 15,
+    "train_ratio": 0.8,
+
+    "train_num_piles_range": [7, 7],
+    "test_num_piles_range": [7, 7],
+    "train_num_blocks_range": [3, 3],
+    "test_num_blocks_range": [4, 10],
+    "train_color_range": [0.0, 1.0],
+    "test_color_range": [0.0, 1.0],
+    "training_static_color": false,
+    "randomize_x_position_of_piles": false,
+
+
+    "train_jitter_pos_xy" : [0.0, 0.0],
+    "test_jitter_pos_xy" : [0.0, 0.0],
+    "train_jitter_size_xy" : [0.0, 0.0],
+    "test_jitter_size_xy" : [0.0, 0.0],
+
+
+    "output_dir": "output",
+    "fixed_size": true,
+    "render_realistically": false,
+    "render_annotated_images": false,
+    "use_planner": true,
+    "interpolation": {
+        "use_interpolation": false,
+        "method": "linear",
+        "num_frames": 5
+    },
+
+
+    "object_classes": ["block", "table", "robot"],
+    "relationship_classes": ["on", "ontable", "clear", "handempty", "handfull", "holding"],
+    "action_name_classes": ["stack", "unstack", "putdown", "pickup",     "approaching", "resetting", "approaching_table"]
+}

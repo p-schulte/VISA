@@ -1,0 +1,41 @@
+{
+    "domain_name": "sokoban",
+    "name_extension": "new_format_gen_test_2_1000",
+    "num_sequences": 1000,
+    "sequence_length_method": "planner",
+    "num_img_per_sequence": [10, 10],
+    "max_img_per_sequence": 10,
+    "train_ratio": 0.8,
+
+    "train_num_stones_range": [2, 2],
+    "test_num_stones_range": [3, 3],
+    "train_num_blocks_range": [5, 5],
+    "test_num_blocks_range": [5, 5],
+    "train_color_range": [0.0, 1.0],
+    "test_color_range": [0.0, 1.0],
+    "training_static_color": false,
+    "randomize_x_position_of_piles": false,
+
+
+    "train_jitter_pos_xy" : [0.0, 0.0],
+    "test_jitter_pos_xy" : [0.0, 0.0],
+    "train_jitter_size_xy" : [0.0, 0.0],
+    "test_jitter_size_xy" : [0.0, 0.0],
+
+
+    "output_dir": "output",
+    "fixed_size": true,
+    "render_realistically": false,
+    "render_annotated_images": false,
+    "use_planner": true,
+    "interpolation": {
+        "use_interpolation": false,
+        "method": "linear",
+        "num_frames": 5
+    },
+
+
+    "object_classes": ["position"],
+    "relationship_classes": ["adj", "adj_2", "has_box", "has_player"],
+    "action_name_classes": ["move", "push"]
+}

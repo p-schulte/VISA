@@ -1,0 +1,1 @@
+-si -d pddl_files/delivery/delivery.pddl -i pddl_files/delivery/delivery-3-3-4-3.pddl -v pddl_files/delivery/delivery-4-4-4-4.pddl -s 1000 -vs 20000 -n delivery

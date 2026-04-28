@@ -1,0 +1,1 @@
+-si -d pddl_files/miconic/miconic.pddl -i pddl_files/miconic/miconic_5_4.pddl -v pddl_files/miconic/miconic_6_6.pddl -s 600 -vs 20000 -n miconic

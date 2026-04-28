@@ -1,0 +1,2 @@
+newtower 1
+move 1

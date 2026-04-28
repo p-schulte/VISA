@@ -1,0 +1,1 @@
+-si -d pddl_files/driverlog/driverlog.pddl -i pddl_files/driverlog/driverlog-mid2.pddl -v pddl_files/driverlog/driverlog-huge.pddl -s 10000 -vs 20000 -n driverlog

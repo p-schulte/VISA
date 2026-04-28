@@ -1,0 +1,27 @@
+{
+    "domain_name": "hanoi",
+    "name_extension": "1000",
+    "num_sequences": 1000,
+    "num_img_per_sequence": [10, 10],
+    "train_ratio": 0.8,
+
+    "train_num_discs_range": [3, 7],
+    "test_num_discs_range": [3, 7],
+    "train_num_pegs_range": [3, 4],
+    "test_num_pegs_range": [3, 4],
+    "train_jitter_pos_xy" : [0.0, 0.0],
+    "test_jitter_pos_xy" : [0.0, 0.0],
+    "train_jitter_size_xy" : [0.0, 0.0],
+    "test_jitter_size_xy" : [0.0, 0.0],
+    "train_color_range": [0.0, 1.0],
+    "test_color_range": [0.0, 1.0],
+
+    "output_dir": "output",
+    "render_annotated_images": false,
+    "use_planner": false,
+
+
+    "object_classes": ["peg", "disc"],
+    "relationship_classes": ["clear", "on", "smaller"],
+    "action_name_classes": ["move"]
+}

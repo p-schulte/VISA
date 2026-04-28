@@ -1,0 +1,1 @@
+1 -lm fg -ls 100 -ln 5 -o out -d pddl_files/npuzzle/npuzzle.pddl -i pddl_files/npuzzle/npuzzle-3-2.pddl pddl_files/npuzzle/npuzzle-2-3.pddl -v pddl_files/npuzzle/npuzzle-3-3.pddl,npg,100,5

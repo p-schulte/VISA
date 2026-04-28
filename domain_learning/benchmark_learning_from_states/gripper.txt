@@ -1,0 +1,1 @@
+-si -d pddl_files/gripper/gripper.pddl -i pddl_files/gripper/gripper_6_2.pddl -v pddl_files/gripper/gripper_8_2.pddl -s 500 -vs 20000 -n gripper

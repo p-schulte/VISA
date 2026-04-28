@@ -1,0 +1,1 @@
+--test_drop -d pddl_files/npuzzle/c-npuzzle.pddl -i pddl_files/npuzzle/c-5-5-npuzzle.pddl -v pddl_files/npuzzle/c-5-5-npuzzle.pddl -s 500 -vs 20000 -n cpuzzle -p dropped_predicates/cpuzzle.txt

@@ -1,0 +1,4 @@
+move 0 1
+pick 1
+drop 0 1
+#### once could possibly remove both arguments from move ???

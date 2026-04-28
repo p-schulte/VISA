@@ -1,0 +1,1 @@
+-si -d pddl_files/logistics/logistics.pddl -i pddl_files/logistics/logistics-t1.pddl -v pddl_files/logistics/logistics-t2.pddl -s 1000 -vs 20000 -n logistics

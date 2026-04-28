@@ -1,0 +1,1 @@
+-si -d pddl_files/blocks_4/blocks_4ops.pddl -i pddl_files/blocks_4/blocks_4ops_5.pddl -v pddl_files/blocks_4/blocks_4ops_6.pddl -s 250 -vs 20000 -n blocks4

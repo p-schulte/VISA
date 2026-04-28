@@ -1,0 +1,84 @@
+test
+%%% Actions 
+ {'pick_up_key_type_2_and_loose_key_type_1_below', 'pick_up_key_type_1_below', 'unlock_door_with_key_type_1_right', 'pick_up_key_type_2_above', 'pick_up_key_type_1_and_loose_key_type_2_below', 'move_left', 'pick_up_key_type_1_left', 'pick_up_key_type_1_above', 'unlock_door_with_key_type_2_right', 'pick_up_key_type_1_and_loose_key_type_2_above', 'unlock_door_with_key_type_2_above', 'unlock_door_with_key_type_1_below', 'move_right', 'pick_up_key_type_2_left', 'move_up', 'pick_up_key_type_2_and_loose_key_type_1_left', 'move_down', 'unlock_door_with_key_type_2_below', 'pick_up_key_type_2_below', 'unlock_door_with_key_type_1_left', 'pick_up_key_type_2_and_loose_key_type_1_above', 'unlock_door_with_key_type_1_above', 'pick_up_key_type_1_and_loose_key_type_2_left', 'pick_up_key_type_2_and_loose_key_type_1_right', 'unlock_door_with_key_type_2_left', 'pick_up_key_type_2_right', 'pick_up_key_type_1_and_loose_key_type_2_right', 'pick_up_key_type_1_right'} 
+ {0: 'pick_up_key_type_2_and_loose_key_type_1_below', 1: 'pick_up_key_type_1_below', 2: 'unlock_door_with_key_type_1_right', 3: 'pick_up_key_type_2_above', 4: 'pick_up_key_type_1_and_loose_key_type_2_below', 5: 'move_left', 6: 'pick_up_key_type_1_left', 7: 'pick_up_key_type_1_above', 8: 'unlock_door_with_key_type_2_right', 9: 'pick_up_key_type_1_and_loose_key_type_2_above', 10: 'unlock_door_with_key_type_2_above', 11: 'unlock_door_with_key_type_1_below', 12: 'move_right', 13: 'pick_up_key_type_2_left', 14: 'move_up', 15: 'pick_up_key_type_2_and_loose_key_type_1_left', 16: 'move_down', 17: 'unlock_door_with_key_type_2_below', 18: 'pick_up_key_type_2_below', 19: 'unlock_door_with_key_type_1_left', 20: 'pick_up_key_type_2_and_loose_key_type_1_above', 21: 'unlock_door_with_key_type_1_above', 22: 'pick_up_key_type_1_and_loose_key_type_2_left', 23: 'pick_up_key_type_2_and_loose_key_type_1_right', 24: 'unlock_door_with_key_type_2_left', 25: 'pick_up_key_type_2_right', 26: 'pick_up_key_type_1_and_loose_key_type_2_right', 27: 'pick_up_key_type_1_right'} 
+ {'pick_up_key_type_2_and_loose_key_type_1_below': 1, 'pick_up_key_type_1_below': 1, 'unlock_door_with_key_type_1_right': 1, 'pick_up_key_type_2_above': 1, 'pick_up_key_type_1_and_loose_key_type_2_below': 1, 'move_left': 1, 'pick_up_key_type_1_left': 1, 'pick_up_key_type_1_above': 1, 'unlock_door_with_key_type_2_right': 1, 'pick_up_key_type_1_and_loose_key_type_2_above': 1, 'unlock_door_with_key_type_2_above': 1, 'unlock_door_with_key_type_1_below': 1, 'move_right': 1, 'pick_up_key_type_2_left': 1, 'move_up': 1, 'pick_up_key_type_2_and_loose_key_type_1_left': 1, 'move_down': 1, 'unlock_door_with_key_type_2_below': 1, 'pick_up_key_type_2_below': 1, 'unlock_door_with_key_type_1_left': 1, 'pick_up_key_type_2_and_loose_key_type_1_above': 1, 'unlock_door_with_key_type_1_above': 1, 'pick_up_key_type_1_and_loose_key_type_2_left': 1, 'pick_up_key_type_2_and_loose_key_type_1_right': 1, 'unlock_door_with_key_type_2_left': 1, 'pick_up_key_type_2_right': 1, 'pick_up_key_type_1_and_loose_key_type_2_right': 1, 'pick_up_key_type_1_right': 1} 
+
+%%% Objects 
+ {'position11', 'position16', 'position6', 'position9', 'position12', 'position18', 'position2', 'position21', 'position4', 'position7', 'position19', 'position5', 'position17', 'position20', 'position22', 'position25', 'position1', 'position3', 'position10', 'position8', 'position15', 'position24', 'position14', 'position13', 'position26', 'position23'} 
+ {'position11': 'position11', 'position16': 'position16', 'position6': 'position6', 'position9': 'position9', 'position12': 'position12', 'position18': 'position18', 'position2': 'position2', 'position21': 'position21', 'position4': 'position4', 'position7': 'position7', 'position19': 'position19', 'position5': 'position5', 'position17': 'position17', 'position20': 'position20', 'position22': 'position22', 'position25': 'position25', 'position1': 'position1', 'position3': 'position3', 'position10': 'position10', 'position8': 'position8', 'position15': 'position15', 'position24': 'position24', 'position14': 'position14', 'position13': 'position13', 'position26': 'position26', 'position23': 'position23'} 
+
+%%% Feature-Arity 
+ {'is_floor': 2, 'adj-above': 2, 'has_locked_door_type_2': 2, 'is_wall': 2, 'has_key_type_2': 2, 'has_locked_door_type_1': 2, 'has_key_type_1': 2, 'has_robot': 2, 'is_robot_hand_empty': 2, 'adj-below': 2, 'adj-left': 2, 'adj-right': 2, 'has_robot_holding_key_type_1': 2, 'has_robot_holding_key_type_2': 2, 'has_open_door_type_2': 2, 'has_open_door_type_1': 2} 
+ [('is_floor', 2), ('adj-above', 2), ('has_locked_door_type_2', 2), ('is_wall', 2), ('has_key_type_2', 2), ('has_locked_door_type_1', 2), ('has_key_type_1', 2), ('has_robot', 2), ('is_robot_hand_empty', 2), ('adj-below', 2), ('adj-left', 2), ('adj-right', 2), ('has_robot_holding_key_type_1', 2), ('has_robot_holding_key_type_2', 2), ('has_open_door_type_2', 2), ('has_open_door_type_1', 2)] 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The effects are not well formed!!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+test
+This is the 1. iteration
+Action Arities {'pick_up_key_type_2_and_loose_key_type_1_below': 1, 'pick_up_key_type_1_below': 1, 'unlock_door_with_key_type_1_right': 1, 'pick_up_key_type_2_above': 1, 'pick_up_key_type_1_and_loose_key_type_2_below': 1, 'move_left': 1, 'pick_up_key_type_1_left': 1, 'pick_up_key_type_1_above': 1, 'unlock_door_with_key_type_2_right': 1, 'pick_up_key_type_1_and_loose_key_type_2_above': 1, 'unlock_door_with_key_type_2_above': 1, 'unlock_door_with_key_type_1_below': 1, 'move_right': 1, 'pick_up_key_type_2_left': 1, 'move_up': 1, 'pick_up_key_type_2_and_loose_key_type_1_left': 1, 'move_down': 1, 'unlock_door_with_key_type_2_below': 1, 'pick_up_key_type_2_below': 1, 'unlock_door_with_key_type_1_left': 1, 'pick_up_key_type_2_and_loose_key_type_1_above': 1, 'unlock_door_with_key_type_1_above': 1, 'pick_up_key_type_1_and_loose_key_type_2_left': 1, 'pick_up_key_type_2_and_loose_key_type_1_right': 1, 'unlock_door_with_key_type_2_left': 1, 'pick_up_key_type_2_right': 1, 'pick_up_key_type_1_and_loose_key_type_2_right': 1, 'pick_up_key_type_1_right': 1}
+Predicates [('is_floor', 2), ('adj-above', 2), ('has_locked_door_type_2', 2), ('is_wall', 2), ('has_key_type_2', 2), ('has_locked_door_type_1', 2), ('has_key_type_1', 2), ('has_robot', 2), ('is_robot_hand_empty', 2), ('adj-below', 2), ('adj-left', 2), ('adj-right', 2), ('has_robot_holding_key_type_1', 2), ('has_robot_holding_key_type_2', 2), ('has_open_door_type_2', 2), ('has_open_door_type_1', 2)]
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+Here was something added!
+72 72
+Here was something added!
+THERE WAS AN ARGUMENT ADDED BY AN COMBINATION!
+pick_up_key_type_2_and_loose_key_type_1_below
+(-1, None) is_wall is_wall(-1, None)
+(None, -1) adj-above not-adj-above(None, -1)
+############################################
+
+605 72
+2102 72
+3612 72
+3840 72
+1664 72
+74 74
+Here was something added!
+THERE WAS AN ARGUMENT ADDED BY AN COMBINATION!
+pick_up_key_type_1_below
+(-1, None) has_key_type_2 has_key_type_2(-1, None)
+(-1, None) has_key_type_1 not-has_key_type_1(-1, None)
+############################################

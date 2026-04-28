@@ -1,0 +1,1 @@
+-si -d pddl_files/hanoi/hanoi.pddl -i pddl_files/hanoi/hanoi-3-5.pddl -v pddl_files/hanoi/hanoi-3-7.pddl -s 200 -vs 20000 -n hanoi

@@ -1,0 +1,36 @@
+# configuring the dataset and model names
+
+
+
+## DATASET NAME AND PATH
+DATASET_NAME: "blocks_1000"
+data_path: "../resources/datasets/{DATASET_NAME}" # this is the new path for the paper
+# DATASET_NAME: "grid_newerest_format_1000" # OLD VERSION
+# data_path: "../dataset/output/{DATASET_NAME}" # this is the original path
+
+
+
+## OBJECT DETECTION MODEL NAME AND PATH
+DET_MODEL_NAME: object_detector.tar
+detector_model_path: "../resources/models/{DATASET_NAME}/{DET_MODEL_NAME}"
+# DET_MODEL_NAME: faster_rcnn_model_20.pth # OLD VERSION
+# detector_model_path: "models/object_detector/{DATASET_NAME}/{DET_MODEL_NAME}" # OLD VERSION
+
+
+
+## DSG GENERATION MODEL NAME AND PATH
+DSG_MODEL_NAME: relation_recognizer.tar
+dsg_model_path: "../resources/models/{DATASET_NAME}/{DSG_MODEL_NAME}"
+# DSG_MODEL_NAME: model_9.tar # OLD VERSION
+# dsg_model_path: "models/dsg_generator/{DATASET_NAME}/{DSG_MODEL_NAME}" # OLD VERSION
+
+
+
+## ACTION IDENTIFICATION MODEL NAME AND PATH
+AC_MODEL_NAME: action_identifier.tar
+ac_model_path: "../resources/models/{DATASET_NAME}/{AC_MODEL_NAME}"
+# AC_MODEL_NAME: model_best.tar # OLD VERSION
+# ac_model_path: "models/action_classification/{DATASET_NAME}/{RUN_NAME}/{AC_MODEL_NAME}" # OLD VERSION
+# RUN_NAME: publishing
+num_example_visualization_instances: 15
+skip_temporal: false

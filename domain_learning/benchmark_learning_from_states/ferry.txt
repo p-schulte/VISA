@@ -1,0 +1,1 @@
+-si -d pddl_files/ferry/ferry.pddl -i pddl_files/ferry/ferry-4-4.pddl -v pddl_files/ferry/ferry-5-5.pddl -s 100 -vs 20000 -n ferry

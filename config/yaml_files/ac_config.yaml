@@ -1,0 +1,320 @@
+# Experiment run name
+run_name: "publishing" # If emtpy, the name is only the dataset name
+
+# Use ground truth DSG instead of predicted DSG for debugging
+use_gt_dsg: false  
+
+# Visualization/results settings
+show_pca: true  # Show PCA plot
+show_confusion_matrix: true  # Show confusion matrix after training# TODO: implement this
+
+# Debugging and dataset settings
+datasize: full  #('full', 'small' 'overfit')
+# DEPRECATED sequence_length: 10  # Number of frames in each sequence
+#num_nodes: 20  # Number of nodes in the scene graph      #35 for slidetile
+num_nodes:
+  ball_hiding_1000: 15
+  ball_hiding_static_dsg_1000: 15
+  ball_hiding_gen_test_1000: 15
+  #ball_hiding_gen_test_static_dsg_1000: 15
+
+  blocks_1000: 15
+  blocks_gen_test_1000: 15
+  #blocks_gen_test_2_1000: 15
+  blocks_arity1_gen_test_1000: 15
+  blocks_realistic_1000: 15
+  blocks_realistic_gen_test_1000: 15
+  blocks_interpolation_1000: 15
+  blocks_interpolation_gen_test_1000: 15
+  blocks_realistic_interpolation_1000: 15
+  blocks_realistic_interpolation_gen_test_1000: 15
+
+  dominoes_1000: 15
+
+  grid_1000: 30
+  grid_gen_test_1000: 37
+  grid_2_shapes_1000: 30
+  grid_2_shapes_gen_test_1000: 37
+  grid_newest_format_1000: 30
+  grid_newerest_format_1000: 30
+  
+  gripper_1000: 20
+  gripper_gen_test_1000: 20
+  #gripper_one_arg_1000: 20
+
+  hanoi_gripper_1000: 15
+  hanoi_gripper_gen_test_2_1000: 15
+  #hanoi_gripper_gen_test_1000: 15
+
+  logistics_1000: 20
+  logistics_gen_test_1000: 20
+
+  slidetile_1000: 20
+  slidetile_gen_test_1000: 20
+  slidetile_with_positions_1000: 35
+  slidetile_with_positions_gen_test_1000: 35
+  #slidetile_with_positions_1000: 20
+  #slidetile__3x3_only_1000: 20
+  #slidetile__4x4_only_1000: 20
+
+  #sokoban_5x5_1000: 30
+  sokoban_5x5_v2_1000: 30
+  sokoban_5x5_v2_static_dsg_1000: 30
+  #sokoban_5x5_v3_1000: 30
+  sokoban_gen_test_1000: 37
+  sokoban_gen_test_2_1000: 37
+  sokoban_new_format_1000: 30
+  sokoban_new_format_static_dsg_1000: 30
+  sokoban_new_format_gen_test_1000: 37
+  sokoban_new_format_gen_test_2_1000: 30
+
+max_arity:
+  blocks_1000: 2
+  blocks_gen_test_1000: 2
+  blocks_gen_test_2_1000: 2
+  blocks_arity1_gen_test_1000: 1
+  blocks_realistic_1000: 2
+  blocks_realistic_gen_test_1000: 2
+  blocks_interpolation_1000: 2
+  blocks_interpolation_gen_test_1000: 2
+  blocks_realistic_interpolation_1000: 2
+  blocks_realistic_interpolation_gen_test_1000: 2
+  hanoi_gripper_1000: 2
+  hanoi_gripper_gen_test_1000: 2
+  hanoi_gripper_gen_test_2_1000: 2
+  ball_hiding_1000: 2
+  ball_hiding_gen_test_1000: 2
+  ball_hiding_gen_test_static_dsg_1000: 2
+  ball_hiding_static_dsg_1000: 2
+  dominoes_1000: 2
+  grid_1000: 2
+  grid_gen_test_1000: 2
+  grid_2_shapes_1000: 2
+  grid_2_shapes_gen_test_1000: 2
+  grid_newest_format_1000: 2
+  grid_newerest_format_1000: 2
+  gripper_1000: 2
+  gripper_gen_test_1000: 2
+  gripper_one_arg_1000: 2
+  logistics_1000: 3
+  logistics_gen_test_1000: 3
+  slidetile_1000: 1
+  slidetile_gen_test_1000: 1
+  slidetile__3x3_only_1000: 1
+  slidetile__4x4_only_1000: 1
+  slidetile_with_positions_1000: 1
+  slidetile_with_positions_gen_test_1000: 0
+  sokoban_5x5_1000: 2 # need to specify
+  sokoban_5x5_v2_1000: 1
+  sokoban_5x5_v2_static_dsg_1000: 1
+  sokoban_5x5_v3_1000: 1
+  sokoban_gen_test_1000: 1
+  sokoban_gen_test_2_1000: 1
+  sokoban_new_format_1000: 2
+  sokoban_new_format_static_dsg_1000: 2
+  sokoban_new_format_gen_test_1000: 2
+  sokoban_new_format_gen_test_2_1000: 2
+threshold_add_edge: 0.1  # Minimum edge weight to add an edge in the graph
+
+# Training parameters
+num_epochs: 70  # Total number of training epochs (set to 100 since we use early stopping)
+batch_size: 1  # Batch size for training
+use_lr_scheduler: false  # Use a learning rate scheduler?
+
+use_early_stopping: false  # Use early stopping?
+early_stopping_patience: 5  # Number of epochs with no improvement after which training will be stopped
+early_stopping_min_delta: 0.01  # Minimum change to qualify as an improvement
+
+optimizer_params:
+  Adam:
+    learning_rate: 0.0001  # Learning rate for the optimizer
+    weight_decay: 0.0001  # Weight decay (L2 regularization) for optimization
+  AdamW:
+    learning_rate: 0.001  # Learning rate for the optimizer
+    weight_decay: 0.0001  # Weight decay (L2 regularization) for optimization
+  SGD:
+    learning_rate: 0.01  # Learning rate for the optimizer
+    momentum: 0.9  # Momentum for the optimizer
+    weight_decay: 0.0001  # Weight decay (L2 regularization) for optimization
+  RMSprop:
+    learning_rate: 0.0001  # Learning rate for the optimizer
+    alpha: 0.99  # Alpha for the optimizer
+    weight_decay: 0.0001  # Weight decay (L2 regularization) for optimization
+
+# Model configuration
+feature_method: original  # Method to extract features from the scene graph -> (hardcoded (9), original (2376), random_noise(100),)
+num_features: 2376  # Number of input features per node
+spatial_kernel_size_old:  # Spatial convolution kernel size -> equals the number of relationships +1 FOR THE SELF LOOP!!!!!!
+  ball_hiding_1000: 10
+  ball_hiding_gen_test_1000: 10
+  ball_hiding_gen_test_static_dsg_1000: 10
+  ball_hiding_static_dsg_1000: 10
+  blocks_1000: 7
+  blocks_arity1_gen_test_1000: 7
+  blocks_gen_test_1000: 7
+  blocks_gen_test_2_1000: 7
+  blocks_interpolation_1000: 7
+  blocks_interpolation_gen_test_1000: 7
+  blocks_realistic_1000: 7
+  blocks_realistic_gen_test_1000: 7
+  blocks_realistic_interpolation_1000: 7
+  blocks_realistic_interpolation_gen_test_1000: 7
+  dominoes_1000: 15
+  grid_1000: 29
+  grid_1000_old: 29
+  grid_debug: 29
+  grid_fcnn_train_1000: 29
+  grid_gen_test_1000: 29
+  gripper_1000: 7
+  gripper_gen_test_1000: 8
+  gripper_one_arg_1000: 7
+  hanoi_gripper_1000: 7
+  hanoi_gripper_gen_test_1000: 7
+  hanoi_gripper_gen_test_2_1000: 7
+  logistics_1000: 5
+  logistics_gen_test_1000: 5
+  slidetile_1000: 5
+  slidetile__3x3_only_1000: 5
+  slidetile__4x4_only_1000: 5
+  slidetile_debug: 5
+  slidetile_gen_test_1000: 5
+  slidetile_with_positions_1000: 6
+  slidetile_with_positions_gen_test_1000: 6
+  sokoban_1000: 10
+  sokoban_5x5_1000: 10
+  sokoban_5x5_v2_1000: 10
+  sokoban_5x5_v2_static_dsg_1000: 10
+  sokoban_5x5_v3_1000: 10
+  sokoban_debug: 10
+  sokoban_fcnn_train_1000: 10
+  sokoban_gen_test_1000: 10
+  sokoban_gen_test_1000_old: 10
+  sokoban_gen_test_2_1000: 10
+  sokoban_gen_test_2_1000_old: 10
+
+bidirectional_adjacency_matrix_old:  # Whether to make the adjacency matrix bidirectional/symmetric (undirected graph)
+  blocks_1000: false
+  blocks_gen_test_1000: false
+  blocks_gen_test_2_1000: false
+  blocks_arity1_gen_test_1000: false
+  blocks_realistic_1000: false
+  blocks_realistic_gen_test_1000: false
+  blocks_interpolation_1000: false
+  blocks_interpolation_gen_test_1000: false
+  blocks_realistic_interpolation_1000: false
+  blocks_realistic_interpolation_gen_test_1000: false
+  hanoi_gripper_1000: false
+  hanoi_gripper_gen_test_1000: false
+  hanoi_gripper_gen_test_2_1000: false
+  ball_hiding_1000: false
+  ball_hiding_gen_test_1000: false
+  ball_hiding_gen_test_static_dsg_1000: false
+  ball_hiding_static_dsg_1000: false
+  dominoes_1000: false
+  gripper_1000: false
+  gripper_gen_test_1000: false
+  gripper_one_arg_1000: false
+  logistics_1000: false
+  logistics_gen_test_1000: false
+
+  # directed graph for better message passing
+  grid_1000: false
+  grid_gen_test_1000: false
+  slidetile_1000: false
+  slidetile_gen_test_1000: false
+  slidetile_with_positions_1000: false
+  slidetile__3x3_only_1000: false
+  slidetile__4x4_only_1000: false
+  slidetile_with_positions_1000: false
+  slidetile_with_positions_gen_test_1000: false
+  sokoban_5x5_1000: false
+  sokoban_5x5_v2_1000: false
+  sokoban_5x5_v2_static_dsg_1000: false
+  sokoban_5x5_v3_1000: false
+  sokoban_gen_test_1000: false
+  sokoban_gen_test_2_1000: false
+temporal_kernel_size: 9  # Temporal convolution kernel size
+
+# Loss functions
+action_name_loss: CrossEntropyLoss
+action_name_loss_weight: 1.0  # Weight for the action name loss
+argument1_loss_weight: 1.0  # Weight for the argument loss
+argument2_loss_weight: 1.0  # Weight for the argument loss
+argument_all_loss_weight: 1.0  # Weight for the argument loss
+
+
+# ST-GCN model configuration
+stgcn_model:
+  pooling_method: avg  # ("avg", "attention")
+
+  use_lstm: false  # Whether to use an LSTM after the ST-GCN layers
+  lstm_num_layers: 1  # Number of layers in the LSTM
+  
+  stgcn_architecture:
+    layers:  # Number of output channels for each ST-GCN layer
+      - 64
+      - 64
+      - 64
+      - 64
+      - 128
+      - 128
+      - 128
+      - 256
+      - 256
+      - 256
+
+  
+  fcn_dropout: 0.5  # Dropout rate for the fully connected layer
+
+
+  classifier_head_architecture:
+    layers:
+      - type: LayerNorm
+      - type: Linear
+        out_features: 512
+      - type: ReLU
+      - type: Dropout
+        p: 0.2
+      - type: Linear
+        out_features: 256
+      - type: ReLU
+      - type: Linear
+        out_features: 128
+      - type: ReLU
+      - type: Linear
+        out_features: 1
+
+  # HOW TO PREDICT THE ACTION NAME?
+  action_name_prediction:
+    method: pairwise
+      # whole_sequence: Predict the action name using the whole sequence
+      # pairwise: Use every (i, i+1) set of graphs to predict the action name
+
+
+  # HOW TO PREDICT THE ARGUMENTS?
+  argument_prediction:
+    method: set_prediction  
+    
+    parameters:
+      set_prediction:
+        argument_loss: BCEWithLogitsLoss
+        optimizer: AdamW
+      two_head_prediction:
+        argument_loss: CrossEntropyLoss
+        optimizer: AdamW
+    
+    
+# ST-GCN layer-specific settings
+stgcn_layer:
+  dropout_tcn: 0.5  # Dropout rate for temporal convolutional networks
+
+# Temporal-Spatial convolution settings (empty for now)
+temp_spat_conv: {}
+
+
+# Ablation studies
+ablation_studies:
+  remove_tcn: false  # Remove the temporal convolution
+  use_simple_edge_type: false # Instead of using one partition for every edge type, use only one partition for all edge types and concatenate the edge features to the node features
+    # spatial kernel size = 2
+    # features = features + (num_relationships or spatial_kernel_size)
