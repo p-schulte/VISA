@@ -64,7 +64,7 @@ DATASETS=(
   sokoban_new_format_gen_test_2_1000
 )
 
-BASE_FCNN_DIR="/work/rleap1/paul.schulte/logs/fcnn_test"
+BASE_FCNN_DIR="${LOG_ROOT:-./logs}/fcnn_test"
 
 # To chain jobs sequentially
 PREV_JOB_ID=""

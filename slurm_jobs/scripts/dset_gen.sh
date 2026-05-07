@@ -4,6 +4,8 @@
 source miniconda3/bin/activate
 conda activate ac_dsg
 
+LOG_ROOT="${LOG_ROOT:-./logs}"
+
 DSET_SRC="ac_dsg/config/yaml_files/dset_config.yaml"
 
 # Get relative domain_file path from dset_config
@@ -19,7 +21,7 @@ DATASET_NAME="${DOMAIN_NAME}_${NAME_EXTENSION}"
 DOMAIN_FILE_NAME="${DOMAIN_NAME}_${NAME_EXTENSION}.json"
 
 # Create a job-specific directory
-JOB_DIR="/work/rleap1/paul.schulte/logs/dataset_generation/${DATASET_NAME}"
+JOB_DIR="${LOG_ROOT}/dataset_generation/${DATASET_NAME}"
 mkdir -p "$JOB_DIR"
 
 # Copy and rename the domain JSON (unique per dataset)

@@ -5,6 +5,8 @@ set -euo pipefail
 source miniconda3/bin/activate
 conda activate ac_dsg
 
+LOG_ROOT="${LOG_ROOT:-./logs}"
+
 # Template config files (your singletons)
 AC_SRC="ac_dsg/config/yaml_files/ac_config.yaml"
 DSG_SRC="ac_dsg/config/yaml_files/dsg_config.yaml"
@@ -50,8 +52,8 @@ DATASETS=(
 
 
 # Base log dirs
-BASE_TRAIN_DIR="/work/rleap1/paul.schulte/logs/ac_train"
-BASE_TEST_DIR="/work/rleap1/paul.schulte/logs/ac_test"
+BASE_TRAIN_DIR="${LOG_ROOT}/ac_train"
+BASE_TEST_DIR="${LOG_ROOT}/ac_test"
 
 for DATASET_NAME in "${DATASETS[@]}"; do
     echo "=== DATASET: ${DATASET_NAME} ==="
@@ -130,7 +132,7 @@ echo "=== ALL SWEEP JOBS SUBMITTED ==="
 
 
 
-# for id in $(squeue -u paul.schulte -n ac_train_slurm.bash -h -o %i); do
+# for id in $(squeue -u "$USER" -n ac_train_slurm.bash -h -o %i); do
 #     dataset=$(scontrol show job $id | awk -F'/' '/StdOut/ {print $(NF-2)}')
 #     echo "$id → $dataset"
 # done

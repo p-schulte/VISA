@@ -4,6 +4,8 @@
 source miniconda3/bin/activate
 conda activate ac_dsg
 
+LOG_ROOT="${LOG_ROOT:-./logs}"
+
 AC_SRC="ac_dsg/config/yaml_files/ac_config.yaml"
 DSG_SRC="ac_dsg/config/yaml_files/dsg_config.yaml"
 DSET_SRC="ac_dsg/config/yaml_files/dset_config.yaml"
@@ -12,7 +14,7 @@ DSET_SRC="ac_dsg/config/yaml_files/dset_config.yaml"
 DATASET_NAME=$(basename "$(yq -r '.DATASET_NAME' "$DSG_SRC")")
 RUN_NAME_RAW=$(yq -r '.run_name' "$AC_SRC")
 
-BASE_DIR="/work/rleap1/paul.schulte/logs/ac_train/${DATASET_NAME}"
+BASE_DIR="${LOG_ROOT}/ac_train/${DATASET_NAME}"
 
 # Fall back to something sane if run_name is empty/null
 if [ -n "$RUN_NAME_RAW" ] && [ "$RUN_NAME_RAW" != "null" ]; then

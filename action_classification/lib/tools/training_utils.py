@@ -24,6 +24,8 @@ if PROJECT_ROOT not in sys.path:
 
 from config.config_loader import CONFIG
 
+LOG_ROOT = os.environ.get("VISA_LOG_ROOT", "logs")
+
 from lib.net.stgcn import STGCN
 from lib.dataloader.dataloader import BlocksworldSequences
 from lib.tools.dsg_construction_utils import (
@@ -296,7 +298,14 @@ def visualize_predictions(im_info, im_data, entry_dsg_generator, dsg_gt_annotati
 
 
         # Save
-        output_dir = f"/u/paul.schulte/wlink/logs/ac_results/{CONFIG.dsg['DATASET_NAME']}/{CONFIG.ac['run_name']}/example_visualization/{dataset.mode}/"
+        output_dir = os.path.join(
+            LOG_ROOT,
+            "ac_results",
+            CONFIG.dsg["DATASET_NAME"],
+            CONFIG.ac["run_name"],
+            "example_visualization",
+            dataset.mode,
+        )
         os.makedirs(output_dir, exist_ok=True)
         cv2.imwrite(f"{output_dir}/merged_grid_b{b}_{frame_idx+1}->{frame_idx+2}.png", combo)
 

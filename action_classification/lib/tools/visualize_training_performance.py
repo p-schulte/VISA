@@ -6,6 +6,8 @@ import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config.config_loader import CONFIG
 
+LOG_ROOT = os.environ.get("VISA_LOG_ROOT", "logs")
+
 INPUT_FILE= "a.txt"
 OUTPUT_FILE= "training_loss.png"
 
@@ -18,8 +20,8 @@ def plot_args_seperately():
         RUN_NAME = '/' + CONFIG.ac['run_name']
     except:
         RUN_NAME = ""
-    INPUT_FILE = f"/work/rleap1/paul.schulte/logs/ac_train/{DATASET_NAME}{RUN_NAME}/run.txt"
-    OUTPUT_FILE_BASE = f"/work/rleap1/paul.schulte/logs/ac_train/{DATASET_NAME}{RUN_NAME}/"
+    INPUT_FILE = os.path.join(LOG_ROOT, "ac_train", f"{DATASET_NAME}{RUN_NAME}", "run.txt")
+    OUTPUT_FILE_BASE = os.path.join(LOG_ROOT, "ac_train", f"{DATASET_NAME}{RUN_NAME}")
 
     # Load the log file
     file_path = INPUT_FILE
@@ -195,8 +197,8 @@ def plot_args_combined():
         RUN_NAME = '/' + CONFIG.ac['run_name']
     except:
         RUN_NAME = ""
-    INPUT_FILE = f"/work/rleap1/paul.schulte/logs/ac_train/{DATASET_NAME}{RUN_NAME}/run.txt"
-    OUTPUT_FILE_BASE = f"/work/rleap1/paul.schulte/logs/ac_train/{DATASET_NAME}{RUN_NAME}/"
+    INPUT_FILE = os.path.join(LOG_ROOT, "ac_train", f"{DATASET_NAME}{RUN_NAME}", "run.txt")
+    OUTPUT_FILE_BASE = os.path.join(LOG_ROOT, "ac_train", f"{DATASET_NAME}{RUN_NAME}")
 
     # Load the log file
     file_path = INPUT_FILE

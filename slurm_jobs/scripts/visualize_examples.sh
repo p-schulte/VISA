@@ -4,6 +4,8 @@
 source miniconda3/bin/activate
 conda activate ac_dsg
 
+LOG_ROOT="${LOG_ROOT:-./logs}"
+
 AC_SRC="ac_dsg/config/yaml_files/ac_config.yaml"
 DSG_SRC="ac_dsg/config/yaml_files/dsg_config.yaml"
 DSET_SRC="ac_dsg/config/yaml_files/dset_config.yaml"
@@ -19,7 +21,7 @@ else
 fi
 
 # Create a dedicated log directory
-JOB_DIR="/work/rleap1/paul.schulte/logs/ac_results/${DATASET_DIR}/example_visualization"
+JOB_DIR="${LOG_ROOT}/ac_results/${DATASET_DIR}/example_visualization"
 mkdir -p "$JOB_DIR"
 
 # Snapshot current configs for this visualization job

@@ -4,6 +4,8 @@
 source miniconda3/bin/activate
 conda activate ac_dsg
 
+LOG_ROOT="${LOG_ROOT:-./logs}"
+
 # Base config paths (the "master" configs you edit by hand)
 AC_SRC="ac_dsg/config/yaml_files/ac_config.yaml"
 DSG_SRC="ac_dsg/config/yaml_files/dsg_config.yaml"
@@ -33,7 +35,7 @@ for LR in "${LRS[@]}"; do
     RUN_TAG="lr${LR}_bs${BS}"
 
     # Directory for this particular experiment
-    JOB_DIR="/work/rleap1/paul.schulte/logs/ac_train/${DATASET_NAME}/${RUN_TAG}"
+    JOB_DIR="${LOG_ROOT}/ac_train/${DATASET_NAME}/${RUN_TAG}"
     mkdir -p "$JOB_DIR"
 
     echo "Launching experiment: ${RUN_TAG}"

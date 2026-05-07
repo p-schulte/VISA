@@ -3,8 +3,8 @@
 ## 0. Clone the repository
 First of all, clone the repository and change the directory:
 ```bash
-git clone https://github.com/p-schulte/ac_dsg
-cd ac_dsg
+git clone https://github.com/VISA-sys/VISA
+cd VISA
 ```
 
 

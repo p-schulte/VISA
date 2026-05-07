@@ -67,7 +67,7 @@ DATASETS=(
 
 
 # Base log dir for DSG tests
-BASE_DSG_TEST_DIR="/work/rleap1/paul.schulte/logs/dsg_test"
+BASE_DSG_TEST_DIR="${LOG_ROOT:-./logs}/dsg_test"
 
 for DATASET_NAME in "${DATASETS[@]}"; do
     echo "=== DSG TEST DATASET: ${DATASET_NAME} ==="

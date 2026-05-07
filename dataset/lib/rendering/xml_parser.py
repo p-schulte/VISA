@@ -22,7 +22,7 @@ def encode_scene_xml(scene_data, output_dir, filename, img_size=(480, 480)):
     # Add owner information
     owner = ET.SubElement(annotation, "owner")
     #ET.SubElement(owner, "flickrid").text = "Fried Camels"
-    ET.SubElement(owner, "name").text = "Paul Schulte"
+    ET.SubElement(owner, "name").text = "anonymous"
 
     # Add size information
     size = ET.SubElement(annotation, "size")

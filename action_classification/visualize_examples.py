@@ -123,7 +123,13 @@ if __name__ == "__main__":
 
     # Clean visualization directory
     import shutil
-    output_dir = f"/u/paul.schulte/wlink/logs/example_visualization/{CONFIG.dsg['DATASET_NAME']}/{CONFIG.ac['run_name']}/visualization_example/"
+    output_dir = os.path.join(
+        LOG_ROOT,
+        "example_visualization",
+        CONFIG.dsg["DATASET_NAME"],
+        CONFIG.ac["run_name"],
+        "visualization_example",
+    )
     if os.path.exists(output_dir):
         for filename in os.listdir(output_dir):
             file_path = os.path.join(output_dir, filename)

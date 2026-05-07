@@ -29,6 +29,8 @@ if PROJECT_ROOT not in sys.path:
 
 from config.config_loader import CONFIG
 
+LOG_ROOT = os.environ.get("VISA_LOG_ROOT", "logs")
+
 from lib.net.stgcn import STGCN
 from lib.dataloader.dataloader import BlocksworldSequences
 from lib.tools.dsg_construction_utils import (
@@ -936,9 +938,12 @@ def run_epoch(
         from lib.tools.dsg_construction_utils import dumps_compact_lists
         import os
 
-        folder = (
-            f"/u/paul.schulte/wlink/logs/ac_results/{CONFIG.dsg['DATASET_NAME']}/"
-            f"{CONFIG.ac['run_name']}/json/"
+        folder = os.path.join(
+            LOG_ROOT,
+            "ac_results",
+            CONFIG.dsg["DATASET_NAME"],
+            CONFIG.ac["run_name"],
+            "json",
         )
         os.makedirs(folder, exist_ok=True)
         output_file = os.path.join(folder, f"{json_name}")
@@ -967,13 +972,25 @@ def run_epoch(
             from lib.tools.training_utils import _pca_and_scatter_indexed
 
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            pca_output_dir = (
-                f"/u/paul.schulte/wlink/logs/ac_results/{CONFIG.dsg['DATASET_NAME']}/"
-                f"{CONFIG.ac['run_name']}/feature_visualization/pca/{dataset.mode}/{timestamp}/"
+            results_root = os.path.join(
+                LOG_ROOT,
+                "ac_results",
+                CONFIG.dsg["DATASET_NAME"],
+                CONFIG.ac["run_name"],
             )
-            npz_output_dir = (
-                f"/u/paul.schulte/wlink/logs/ac_results/{CONFIG.dsg['DATASET_NAME']}/"
-                f"{CONFIG.ac['run_name']}/feature_visualization/npz/{dataset.mode}/{timestamp}/"
+            pca_output_dir = os.path.join(
+                results_root,
+                "feature_visualization",
+                "pca",
+                dataset.mode,
+                timestamp,
+            )
+            npz_output_dir = os.path.join(
+                results_root,
+                "feature_visualization",
+                "npz",
+                dataset.mode,
+                timestamp,
             )
             os.makedirs(pca_output_dir, exist_ok=True)
             os.makedirs(npz_output_dir, exist_ok=True)
@@ -1134,9 +1151,12 @@ def run_epoch(
     plt.title("Confusion Matrix: Action Type Prediction")
     plt.tight_layout()
 
-    output_dir = (
-        f"/u/paul.schulte/wlink/logs/ac_results/{CONFIG.dsg['DATASET_NAME']}/"
-        f"{CONFIG.ac['run_name']}/confusion_matrix/"
+    output_dir = os.path.join(
+        LOG_ROOT,
+        "ac_results",
+        CONFIG.dsg["DATASET_NAME"],
+        CONFIG.ac["run_name"],
+        "confusion_matrix",
     )
     os.makedirs(output_dir, exist_ok=True)
     plt.savefig(os.path.join(output_dir, f"confusion_matrix_{dataset.mode}_set_epoch_{epoch}.pdf"))
@@ -1297,7 +1317,6 @@ def run_training():
 
     wandb.init(
         project="ac_dsg",
-        entity="paul-schulte-04",
         config={
             "num_epochs": num_epochs,
             "batch_size": batch_size,

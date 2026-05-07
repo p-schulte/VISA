@@ -52,8 +52,8 @@ This folder should contain our generated datasets and trained models. You can do
 
 ### 0. Clone the Repository
 ```bash
-git clone https://github.com/p-schulte/ac_dsg
-cd ac_dsg
+git clone https://github.com/VISA-sys/VISA
+cd VISA
 ```
 
 ### 1. Setup Conda Environments

@@ -1,8 +1,8 @@
 
 import json
 
-input_file = "/Users/ulzhalgasrakhman/graph-separator/json_files/grids_fixed.json"
-output_file = "/Users/ulzhalgasrakhman/graph-separator/json_files/grids_fixed2.json"
+input_file = "json_files/grids_fixed.json"
+output_file = "json_files/grids_fixed2.json"
 
 with open(input_file) as f:
     data = json.load(f)
@@ -30,8 +30,8 @@ print("Fixed JSON written to", output_file)
 
 import json
 
-INPUT_FILE = "/Users/ulzhalgasrakhman/graph-separator/json_files/grids_new.json"
-OUTPUT_FILE = "/Users/ulzhalgasrakhman/graph-separator/json_files/grids_fixed.json"
+INPUT_FILE = "json_files/grids_new.json"
+OUTPUT_FILE = "json_files/grids_fixed.json"
 
 # predicates that must stay binary
 KEEP_BINARY = {"adj-right", "adj-left", "adj-above", "adj-below"}
