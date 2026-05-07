@@ -5,7 +5,7 @@
 #SBATCH --gpus-per-node=0           # GPUs per node
 #SBATCH --mem=8g                   # Memory allocation
 #SBATCH --partition=rleap_gpu_48gb  # Partition (queue) to use
-#SBATCH --output=/work/rleap1/paul.schulte/logs/ac_train/ac_train.txt  # Output log file
+#SBATCH --output=slurm-%x-%j.out  # Output log file
 
 # activate conda environment
 source miniconda3/bin/activate

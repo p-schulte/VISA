@@ -5,7 +5,7 @@
 #SBATCH --gpus-per-node=1           # GPUs per node
 #SBATCH --mem=64g                   # Memory allocation
 #SBATCH --partition=rleap_gpu_48gb  # Partition (queue) to use
-#SBATCH --output=/work/rleap1/paul.schulte/logs/dataset_generation/dset_gen_log.txt  # Temporary placeholder
+#SBATCH --output=slurm-%x-%j.out  # Temporary placeholder
 
 
 # activate conda environment

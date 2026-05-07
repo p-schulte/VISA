@@ -5,7 +5,7 @@
 #SBATCH --gpus-per-node=0           # GPUs per node
 #SBATCH --mem=1g                   # Memory allocation
 #SBATCH --partition=rleap_gpu_48gb  # Partition (queue) to use
-#SBATCH --output=/work/rleap1/paul.schulte/logs/misc/delayed_execution.txt  # Temporary placeholder
+#SBATCH --output=slurm-%x-%j.out  # Temporary placeholder
 
 
 

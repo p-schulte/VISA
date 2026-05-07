@@ -5,7 +5,7 @@
 #SBATCH --gpus-per-node=1           # GPUs per node
 #SBATCH --mem=64g                   # Memory allocation
 #SBATCH --partition=rleap_gpu_24gb  # Partition (queue) to use
-#SBATCH --output=/work/rleap1/paul.schulte/logs/compile_fcnn.txt  # Output log file
+#SBATCH --output=slurm-%x-%j.out  # Output log file
 
 # activate conda environment
 source miniconda3/bin/activate
@@ -27,7 +27,7 @@ nvcc --allow-unsupported-compiler --version
 
 
 pip uninstall faster_rcnn -y
-cd /work/rleap1/paul.schulte/ac_dsg/dsg_generator/fasterRCNN/lib
+cd fasterRCNN/lib
 rm -rf build/
 rm model/_C.cpython-39-x86_64-linux-gnu.so
 python setup.py clean
