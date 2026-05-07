@@ -298,7 +298,7 @@ class JSONThings:
         return state_dict
 
     # todo check whether this is a getter or what
-    # need to be implemented for ulzahgas input
+    # need to be implemented for  input
     def action_arities(self):
         raise NotImplementedError
 
