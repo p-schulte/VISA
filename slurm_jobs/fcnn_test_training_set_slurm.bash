@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=8           # CPU cores per task
 #SBATCH --gpus-per-node=1           # GPUs per node
 #SBATCH --mem=64g                   # Memory allocation
-#SBATCH --partition=rleap_gpu_48gb  # Partition (queue) to use
+#SBATCH --partition=cluster_gpu_48gb  # Partition (queue) to use
 #SBATCH --output=slurm-%x-%j.out  # Output log file
 
 # activate conda environment

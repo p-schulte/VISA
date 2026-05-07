@@ -29,4 +29,4 @@ sbatch \
   --export=ALL,AC_CONFIG_FILE="${JOB_DIR}/ac_config.yaml",DSG_CONFIG_FILE="${JOB_DIR}/dsg_config.yaml",DSET_CONFIG_FILE="${JOB_DIR}/dset_config.yaml" \
   ac_dsg/slurm_jobs/fcnn_train_slurm.bash
 # Optionally, if you want to use the deadline queue:
-#  --qos=rleap_deadline
+#  --qos=cluster_deadline

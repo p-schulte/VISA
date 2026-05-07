@@ -97,7 +97,7 @@ for DATASET_NAME in "${DATASETS[@]}"; do
     # Submit DSG test job with frozen configs
     JOB_ID=$(
       sbatch \
-        --qos=rleap_deadline \
+        --qos=cluster_deadline \
         --time=01:00:00 \
         --output="${JOB_DIR}/run.txt" \
         --export=ALL,AC_CONFIG_FILE="${AC_CFG_TEST}",DSG_CONFIG_FILE="${DSG_CFG_TEST}",DSET_CONFIG_FILE="${DSET_CFG_TEST}" \

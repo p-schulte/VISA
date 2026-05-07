@@ -35,4 +35,4 @@ sbatch \
   --output="${JOB_DIR}/run.txt" \
   --export=ALL,AC_CONFIG_FILE="${JOB_DIR}/ac_config.yaml",DSG_CONFIG_FILE="${JOB_DIR}/dsg_config.yaml",DSET_CONFIG_FILE="${JOB_DIR}/dset_config.yaml" \
   ac_dsg/slurm_jobs/ac_test_slurm.bash
-#   --qos=rleap_deadline
+#   --qos=cluster_deadline

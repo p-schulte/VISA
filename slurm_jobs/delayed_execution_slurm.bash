@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=1           # CPU cores per task
 #SBATCH --gpus-per-node=0           # GPUs per node
 #SBATCH --mem=1g                   # Memory allocation
-#SBATCH --partition=rleap_gpu_48gb  # Partition (queue) to use
+#SBATCH --partition=cluster_gpu_48gb  # Partition (queue) to use
 #SBATCH --output=slurm-%x-%j.out  # Temporary placeholder
 
 

@@ -37,4 +37,4 @@ sbatch \
   --export=ALL,AC_CONFIG_FILE="${JOB_DIR}/ac_config.yaml",DSG_CONFIG_FILE="${JOB_DIR}/dsg_config.yaml",DSET_CONFIG_FILE="${JOB_DIR}/dset_config.yaml" \
   ac_dsg/slurm_jobs/ac_train_slurm.bash
 # If you want the deadline queue, add this flag and move it up to be the first flag (does not work at the end):
-#   --qos=rleap_deadline
+#   --qos=cluster_deadline

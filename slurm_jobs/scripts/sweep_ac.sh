@@ -87,7 +87,7 @@ for DATASET_NAME in "${DATASETS[@]}"; do
 
     TRAIN_JOB_ID=$(
         sbatch \
-          --qos=rleap_deadline \
+          --qos=cluster_deadline \
           --time=48:00:00 \
           --output="${TRAIN_JOB_DIR}/run.txt" \
           --export=ALL,AC_CONFIG_FILE="${AC_CFG_TRAIN}",DSG_CONFIG_FILE="${DSG_CFG_TRAIN}",DSET_CONFIG_FILE="${DSET_CFG_TRAIN}" \
@@ -112,7 +112,7 @@ for DATASET_NAME in "${DATASETS[@]}"; do
 
     TEST_JOB_ID=$(
         sbatch \
-          --qos=rleap_deadline \
+          --qos=cluster_deadline \
           --time=05:00:00 \
           --dependency=afterany:${TRAIN_JOB_ID} \
           --output="${TEST_JOB_DIR}/run.txt" \

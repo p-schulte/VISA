@@ -95,7 +95,7 @@ for DATASET_NAME in "${DATASETS[@]}"; do
 
     # Build sbatch command, adding dependency if there is a previous job
     SBATCH_CMD=(sbatch
-        --qos=rleap_deadline
+        --qos=cluster_deadline
         --time=00:15:00
         --export="${EXPORT_VARS}"
         --output="${JOB_DIR}/${DATASET_NAME}_test_set.txt"

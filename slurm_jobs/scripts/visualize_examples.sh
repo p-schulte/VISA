@@ -31,9 +31,9 @@ cp "$DSET_SRC" "${JOB_DIR}/dset_config.yaml"
 
 # Submit SLURM job with frozen configs
 sbatch \
-  --qos=rleap_deadline \
+  --qos=cluster_deadline \
   --output="${JOB_DIR}/run.txt" \
   --export=ALL,AC_CONFIG_FILE="${JOB_DIR}/ac_config.yaml",DSG_CONFIG_FILE="${JOB_DIR}/dsg_config.yaml",DSET_CONFIG_FILE="${JOB_DIR}/dset_config.yaml" \
   ac_dsg/slurm_jobs/visualize_examples_slurm.bash
 # Optionally enable deadline queue:
-#  --qos=rleap_deadline
+#  --qos=cluster_deadline
